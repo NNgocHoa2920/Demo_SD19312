@@ -23,11 +23,11 @@ namespace MVC_Web.Migrations
 
             modelBuilder.Entity("MVC_Web.Models.Category", b =>
                 {
-                    b.Property<int>("CategoryID")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
                     b.Property<int>("DisplayOrder")
                         .HasColumnType("int");
@@ -36,41 +36,9 @@ namespace MVC_Web.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CategoryID");
+                    b.HasKey("ID");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            CategoryID = 1,
-                            DisplayOrder = 1,
-                            Name = "Khoai1"
-                        },
-                        new
-                        {
-                            CategoryID = 2,
-                            DisplayOrder = 2,
-                            Name = "Khoai2"
-                        },
-                        new
-                        {
-                            CategoryID = 3,
-                            DisplayOrder = 10,
-                            Name = "Khoai3"
-                        },
-                        new
-                        {
-                            CategoryID = 4,
-                            DisplayOrder = 9,
-                            Name = "Khoai4"
-                        },
-                        new
-                        {
-                            CategoryID = 5,
-                            DisplayOrder = 8,
-                            Name = "Khoai5"
-                        });
                 });
 #pragma warning restore 612, 618
         }
