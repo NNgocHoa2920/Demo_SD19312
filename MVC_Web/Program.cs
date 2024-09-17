@@ -1,8 +1,13 @@
-﻿var builder = WebApplication.CreateBuilder(args); //tạo ra ứng dụng web
+﻿using Microsoft.EntityFrameworkCore;
+using MVC_Web.Models;
+
+var builder = WebApplication.CreateBuilder(args); //tạo ra ứng dụng web
 
 // Add services to the container.
 builder.Services.AddControllersWithViews(); // add các service cần
-//sau này service thì bắt buộc phải add dưới var builder và trên var app
+//sau này add service thì bắt buộc phải add dưới var builder và trên var app
+builder.Services.AddDbContext<SD19312DbContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build(); // chạy đối tượng web
 
@@ -29,5 +34,6 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 // cáu hình cach thức truy cập action của controler
-//htts:/local123/controler/action/id
+//https:/local123/controler/action/id
+//https:/local123/Category/Index
 app.Run();

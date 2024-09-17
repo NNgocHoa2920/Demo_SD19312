@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVC_Web.Migrations
 {
     [DbContext(typeof(SD19312DbContext))]
-    [Migration("20240912011510_hi")]
-    partial class hi
+    [Migration("20240914020828_sd19312a333")]
+    partial class sd19312a333
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,11 +25,11 @@ namespace MVC_Web.Migrations
 
             modelBuilder.Entity("MVC_Web.Models.Category", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("CategoryID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryID"), 1L, 1);
 
                     b.Property<int>("DisplayOrder")
                         .HasColumnType("int");
@@ -38,7 +38,7 @@ namespace MVC_Web.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ID");
+                    b.HasKey("CategoryID");
 
                     b.ToTable("Categories");
                 });

@@ -3,6 +3,7 @@ using MVC_Web.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVC_Web.Migrations
 {
     [DbContext(typeof(SD19312DbContext))]
-    partial class SD19312DbContextModelSnapshot : ModelSnapshot
+    [Migration("20240914004922_sd19312a")]
+    partial class sd19312a
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,38 +41,6 @@ namespace MVC_Web.Migrations
                     b.HasKey("CategoryID");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            CategoryID = 1,
-                            DisplayOrder = 1,
-                            Name = "Khoai1"
-                        },
-                        new
-                        {
-                            CategoryID = 2,
-                            DisplayOrder = 2,
-                            Name = "Khoai2"
-                        },
-                        new
-                        {
-                            CategoryID = 3,
-                            DisplayOrder = 10,
-                            Name = "Khoai3"
-                        },
-                        new
-                        {
-                            CategoryID = 4,
-                            DisplayOrder = 9,
-                            Name = "Khoai4"
-                        },
-                        new
-                        {
-                            CategoryID = 5,
-                            DisplayOrder = 8,
-                            Name = "Khoai5"
-                        });
                 });
 #pragma warning restore 612, 618
         }
