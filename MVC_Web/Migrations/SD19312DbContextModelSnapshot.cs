@@ -39,6 +39,38 @@ namespace MVC_Web.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            DisplayOrder = 1,
+                            Name = "Hung"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            DisplayOrder = 9,
+                            Name = "Banh"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            DisplayOrder = 5,
+                            Name = "Keo"
+                        },
+                        new
+                        {
+                            ID = 4,
+                            DisplayOrder = 8,
+                            Name = "Khoai"
+                        },
+                        new
+                        {
+                            ID = 5,
+                            DisplayOrder = 5,
+                            Name = "Dua hau"
+                        });
                 });
 #pragma warning restore 612, 618
         }

@@ -4,7 +4,7 @@
 
 namespace MVC_Web.Migrations
 {
-    public partial class hi : Migration
+    public partial class he : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -20,6 +20,18 @@ namespace MVC_Web.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Categories", x => x.ID);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "ID", "DisplayOrder", "Name" },
+                values: new object[,]
+                {
+                    { 1, 1, "Hung" },
+                    { 2, 9, "Banh" },
+                    { 3, 5, "Keo" },
+                    { 4, 8, "Khoai" },
+                    { 5, 5, "Dua hau" }
                 });
         }
 
